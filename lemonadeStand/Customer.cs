@@ -9,11 +9,16 @@ namespace lemonadeStand
     class Customer
     {
         //member variables(HAS A)
+        public bool toBuy;
 
 
         //construstor
 
 
         //member methods(HAS TO)
+        public bool DecideToBuy()
+        {
+            return toBuy = true;
+        }
     }
 }

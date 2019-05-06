@@ -9,6 +9,9 @@ namespace lemonadeStand
     class Player
     {
         //member variables(HAS A)
+        public string name;
+        public double profitLoss;
+        public Inventory Inventory;
 
 
         //construstor

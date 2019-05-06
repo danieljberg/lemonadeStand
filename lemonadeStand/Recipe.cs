@@ -6,22 +6,16 @@ using System.Threading.Tasks;
 
 namespace lemonadeStand
 {
-    class UserInterface
+    class Recipe
     {
         //member variables(HAS A)
-
+        int howManyLemons;
+        int howMuchSugar;
+        int howManyIceCubes;
 
         //construstor
 
 
         //member methods(HAS TO)
-        public string GetName()
-        {
-            
-        }
-        public int HowMany()
-        {
-
-        }
     }
 }

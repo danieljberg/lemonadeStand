@@ -9,12 +9,18 @@ namespace lemonadeStand
     class Game
     {
         //member variables(HAS A)
+        public Store store;
+        public Day today;
 
 
         //construstor
 
 
         //member methods(HAS TO)
+        public void PlayGame()
+        {
+
+        }
 
     }
 }
