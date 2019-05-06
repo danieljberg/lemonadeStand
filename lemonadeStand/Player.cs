@@ -12,11 +12,19 @@ namespace lemonadeStand
         public string name;
         public double profitLoss;
         public Inventory Inventory;
-
+        public UserInterface UserInterface;
 
         //construstor
 
 
         //member methods(HAS TO)
+        public void BuyInventory()
+        {
+
+        }
+        public void SetRecipe()
+        {
+
+        }
     }
 }

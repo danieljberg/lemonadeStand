@@ -14,7 +14,13 @@ namespace lemonadeStand
         int howManyIceCubes;
 
         //construstor
+        public Recipe()
+        {
+            howManyLemons = 4;
+            howMuchSugar = 4;
+            howManyIceCubes = 4;
 
+        }
 
         //member methods(HAS TO)
     }
