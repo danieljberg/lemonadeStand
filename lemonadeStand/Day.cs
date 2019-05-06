@@ -12,19 +12,25 @@ namespace lemonadeStand
         public int today;
         public Customer customerBase;
         public Recipe recipe;
-        public Weather todaysWeather;
+        public Weather Weather;
+        public UserInterface UserInterface;
 
         //construstor
-        todaysWeather = new Weather();
+        public Day()
+        {
+            Weather = new Weather();
+            UserInterface = new UserInterface();
+        }
+        
 
         //member methods(HAS TO)
         public void GenerateCustomerBase()
         {
-
+            
         }
         public void GetTheWeather()
         {
-
+            UserInterface.DisplayWeather(Weather.todayTempature, Weather.todayForecast);
         }
         public void GetTheRecipe()
         {

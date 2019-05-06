@@ -10,32 +10,33 @@ namespace lemonadeStand
     {
         //member variables(HAS A)
         public int todayTempature;
-        public string todayForcast;
+        public string todayForecast;
+            //public int tomorrowTempature;
+            //public string tomorrowForcast;
 
-        //public int tomorrowTempature;
-        // public string tomorrowForcast;
-
-        public List<string> weatherForcast;
+        public List<string> weatherForecastList;
 
         //construstor
         public Weather()
         {
-            weatherForcast = new List<string>() { "Sunny", "Partly Sunny", "Partly Cloudy", "Overcast", "Rainy" };
+            weatherForecastList = new List<string>() { "Sunny", "Partly Sunny", "Partly Cloudy", "Overcast", "Rainy" };
+            todayTempature = GetTempature();
+            todayForecast = GetForecast(weatherForecastList);
         } 
 
         //member methods(HAS TO)
-        public int getTempature()
+        public int GetTempature()
         {
             Random randomTemp = new Random();
             todayTempature = randomTemp.Next(60, 103);
             return todayTempature;
         }
-        public string getForcast(List<string> weatherForcast)
+        public string GetForecast(List<string> weatherForecast)
         {
             Random randomNumber = new Random();
             int indexNumber = randomNumber.Next(5);
-            todayForcast = weatherForcast.ElementAt(indexNumber);
-            return todayForcast;
+            todayForecast = weatherForecast.ElementAt(indexNumber);
+            return todayForecast;
         }
     }
 }

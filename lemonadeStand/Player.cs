@@ -15,14 +15,18 @@ namespace lemonadeStand
         public UserInterface UserInterface;
 
         //construstor
-
+        public Player()
+        {
+            Inventory = new Inventory();
+            UserInterface = new UserInterface();
+        }
 
         //member methods(HAS TO)
         public void BuyInventory()
         {
 
         }
-        public void SetRecipe()
+        public void SetNewRecipe()
         {
 
         }

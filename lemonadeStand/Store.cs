@@ -15,7 +15,10 @@ namespace lemonadeStand
         public double icePrice;
 
         //construstor
+        public Store()
+        {
 
+        }
 
         //member methods(HAS TO)
         public void CalculateTotalPrice()

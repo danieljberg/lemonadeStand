@@ -12,10 +12,12 @@ namespace lemonadeStand
         int howManyLemons;
         int howMuchSugar;
         int howManyIceCubes;
+        UserInterface UserInterface;
 
         //construstor
         public Recipe()
         {
+            UserInterface = new UserInterface();
             howManyLemons = 4;
             howMuchSugar = 4;
             howManyIceCubes = 4;
@@ -23,5 +25,6 @@ namespace lemonadeStand
         }
 
         //member methods(HAS TO)
+
     }
 }
