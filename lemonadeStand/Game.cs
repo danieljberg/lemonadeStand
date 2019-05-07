@@ -10,16 +10,22 @@ namespace lemonadeStand
     {
         //member variables(HAS A)
         public Store store;
-        public Day today;
-
+        public List<Day> daysOfWeek;
+        public Player Player;
+        public int daysPlaying;
 
         //construstor
-
+        public Game()
+        {
+            Player = new Player();
+            daysPlaying = 7;
+        }
 
         //member methods(HAS TO)
         public void PlayGame()
         {
-
+            daysOfWeek = new List<Day>(daysPlaying);
+            daysOfWeek[0].Weather.projectedDayForecast
         }
 
     }

@@ -6,20 +6,15 @@ using System.Threading.Tasks;
 
 namespace lemonadeStand
 {
-    class Customer
+    class Pitcher
     {
         //member variables(HAS A)
-        public bool toBuy;
+        public double costPerPitcher;
 
 
         //construstor
 
 
-
-        //member methods(HAS TO)
-        public bool DecideToBuy()
-        {
-            return toBuy = true;
-        }
+        //member methods(HAD A)
     }
 }

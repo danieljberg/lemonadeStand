@@ -15,7 +15,10 @@ namespace lemonadeStand
         public int numberOfIceCubes;
 
         //construstor
-
+        public Inventory()
+        {
+            //numberOfCups = 
+        }
 
         //member methods(HAS TO)
         public int SubtractInventoryItem(int item)

@@ -12,13 +12,13 @@ namespace lemonadeStand
         public string name;
         public double profitLoss;
         public Inventory Inventory;
-        public UserInterface UserInterface;
+        public Wallet Wallet;
 
         //construstor
         public Player()
         {
             Inventory = new Inventory();
-            UserInterface = new UserInterface();
+            Wallet = new Wallet();
         }
 
         //member methods(HAS TO)

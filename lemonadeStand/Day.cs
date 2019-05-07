@@ -9,17 +9,16 @@ namespace lemonadeStand
     class Day
     {
         //member variables(HAS A)
-        public int today;
-        public Customer customerBase;
-        public Recipe recipe;
+        public int daysPlaying;
+            //public Customer customerBase;
+            //public Recipe recipe;
         public Weather Weather;
-        public UserInterface UserInterface;
 
         //construstor
         public Day()
         {
             Weather = new Weather();
-            UserInterface = new UserInterface();
+            daysPlaying = 7;
         }
         
 
@@ -30,9 +29,9 @@ namespace lemonadeStand
         }
         public void GetTheWeather()
         {
-            UserInterface.DisplayWeather(Weather.todayTempature, Weather.todayForecast);
+            UserInterface.DisplayActualWeather(Weather.projectedDayTemperature, Weather.projectedDayForecast);
         }
-        public void GetTheRecipe()
+        public void GetRecipe()
         {
 
         }
