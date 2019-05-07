@@ -19,13 +19,15 @@ namespace lemonadeStand
         {
             Player = new Player();
             daysPlaying = 7;
+            daysOfWeek = new List<Day>(daysPlaying);
         }
 
         //member methods(HAS TO)
         public void PlayGame()
         {
-            daysOfWeek = new List<Day>(daysPlaying);
-            daysOfWeek[0].Weather.projectedDayForecast
+            
+            //daysOfWeek[0].Weather.projectedDayForecast
+
         }
 
     }

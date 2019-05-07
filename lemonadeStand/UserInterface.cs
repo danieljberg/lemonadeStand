@@ -27,6 +27,13 @@ namespace lemonadeStand
             int answer = int.Parse(Console.ReadLine());
             return answer;
         }
+        public static string ItemToBuy()
+        {
+            Console.WriteLine("What item would you like to buy?");
+            string itemToBuy = Console.ReadLine();
+            return itemToBuy;
+        }
+        public static void Display
         public static void DisplayInventory(int numberOfCups, int numberOfLemons, int cupsOfSugar, int numberOfIceCubes)
         {
             Console.WriteLine($"INVENTORY:\n\nCups: {numberOfCups}\nLemons: {numberOfLemons}\nSugar(cups): {cupsOfSugar}\nIce cubes: {numberOfIceCubes}");

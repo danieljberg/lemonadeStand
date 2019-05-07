@@ -12,7 +12,8 @@ namespace lemonadeStand
         public int projectedDayTemperature;
         public string projectedDayForecast;
         public List<string> weatherForecastList;
-        
+        public int actualDayTemperature;
+        public string actualDayForecast;
 
         //construstor
         public Weather()
@@ -20,6 +21,7 @@ namespace lemonadeStand
             weatherForecastList = new List<string>() { "Sunny", "Partly Sunny", "Partly Cloudy", "Overcast", "Rainy" };
             projectedDayTemperature = GetTempature();
             projectedDayForecast = GetForecast(weatherForecastList);
+            actualDayTemperature = ActualDayTemperature(projectedDayTemperature);
         } 
 
         //member methods(HAS TO)
@@ -36,15 +38,14 @@ namespace lemonadeStand
             projectedDayForecast = weatherForecast.ElementAt(indexNumber);
             return projectedDayForecast;
         }
-            //public void GetWeekTempature(int daysPlaying)
-            //{
-            //    for (int i = 0; i < daysPlaying; i++)
-            //    {
-            //        temperature = GetTempature();
-            //        weekTemperature.Add(temperature);                
-            //    }
-            //    weekTemperature.ForEach(Console.WriteLine);
-            
-            //}
+        public int ActualDayTemperature(int projectedDayTemperature)
+        {
+            Random randomNumber = new Random();
+            return actualDayTemperature = randomNumber.Next(projectedDayTemperature - 3, projectedDayTemperature + 3);
+        }
+        public void ActualDayForecast()
+        {
+
+        }
     }
 }

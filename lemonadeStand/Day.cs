@@ -27,13 +27,9 @@ namespace lemonadeStand
         {
             
         }
-        public void GetTheWeather()
-        {
-            UserInterface.DisplayActualWeather(Weather.projectedDayTemperature, Weather.projectedDayForecast);
-        }
-        public void GetRecipe()
-        {
-
-        }
+        //public void GetTheWeather()
+        //{
+        //    UserInterface.DisplayActualWeather(Weather.projectedDayTemperature, Weather.projectedDayForecast);
+        //}       
     }
 }

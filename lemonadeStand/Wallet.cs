@@ -9,11 +9,14 @@ namespace lemonadeStand
     class Wallet
     {
         //member varibles(HAS A)
-        public double value;
+        public double totalValue;
 
 
         //constructor
-        
+        public Wallet()
+        {
+            totalValue = 20.00;
+        } 
 
         //member methods(HAS TO)
     }

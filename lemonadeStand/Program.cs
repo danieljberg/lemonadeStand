@@ -10,9 +10,7 @@ namespace lemonadeStand
     {
         static void Main(string[] args)
         {
-            Weather weather = new Weather();
-            weather.GetWeekTempature(7);
-            Console.ReadLine();
+            
         }
     }
 }
