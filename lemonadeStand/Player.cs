@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace lemonadeStand
 {
-    class Player
+    public class Player
     {
         //member variables(HAS A)
         public string name;
         public double profitLoss;
-        public Inventory Inventory;
-        public Wallet Wallet;
+        public Inventory inventory;
+        public Wallet wallet;
 
         //construstor
         public Player()
         {
-            Inventory = new Inventory();
-            Wallet = new Wallet();
+            inventory = new Inventory();
+            wallet = new Wallet();
         }
 
         //member methods(HAS TO)

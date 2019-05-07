@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lemonadeStand
 {
-    class Weather
+    public class Weather
     {
         //member variables(HAS A)
         public int projectedDayTemperature;

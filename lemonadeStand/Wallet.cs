@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lemonadeStand
 {
-    class Wallet
+    public class Wallet
     {
         //member varibles(HAS A)
         public double totalValue;

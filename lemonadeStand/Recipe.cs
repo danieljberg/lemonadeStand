@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lemonadeStand
 {
-    class Recipe
+    public class Recipe
     {
         //member variables(HAS A)
         int howManyLemons;

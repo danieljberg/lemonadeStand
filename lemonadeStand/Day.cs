@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lemonadeStand
 {
-    class Day
+    public class Day
     {
         //member variables(HAS A)
         public int daysPlaying;

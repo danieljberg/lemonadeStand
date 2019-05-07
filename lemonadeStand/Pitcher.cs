@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lemonadeStand
 {
-    class Pitcher
+    public class Pitcher
     {
         //member variables(HAS A)
         public double costPerPitcher;

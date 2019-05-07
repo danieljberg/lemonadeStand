@@ -33,10 +33,13 @@ namespace lemonadeStand
             string itemToBuy = Console.ReadLine();
             return itemToBuy;
         }
-        public static void Display
-        public static void DisplayInventory(int numberOfCups, int numberOfLemons, int cupsOfSugar, int numberOfIceCubes)
+        public static void DisplayWallet(Player player)
         {
-            Console.WriteLine($"INVENTORY:\n\nCups: {numberOfCups}\nLemons: {numberOfLemons}\nSugar(cups): {cupsOfSugar}\nIce cubes: {numberOfIceCubes}");
+            Console.WriteLine($"WALLET: {player.wallet.totalValue}");
+        }
+        public static void DisplayInventory(Player player)
+        {
+            Console.WriteLine($"INVENTORY:\n\nCups: {player.inventory.numberOfCups}\nLemons: {player.inventory.numberOfLemons}\nSugar(cups): {player.inventory.cupsOfSugar}\nIce cubes: {player.inventory.numberOfIceCubes}");
         }
         public static void DisplayRecipe(int howManyLemons, int howMuchSugar, int howManyIceCubes)
         {
