@@ -10,21 +10,22 @@ namespace lemonadeStand
     {
         //member variables(HAS A)
         public int daysPlaying;
-            //public Customer customerBase;
-            //public Recipe recipe;
+            //public Customer customerBase;        
         public Weather Weather;
+        public Recipe Recipe;
 
         //construstor
         public Day()
         {
             Weather = new Weather();
+            Recipe = new Recipe();
         }
         
 
         //member methods(HAS TO)
         public void GenerateCustomerBase()
         {
-            
+            Customer customer = new Customer(Weather, Recipe);
         }
         //public void GetTheWeather()
         //{

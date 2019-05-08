@@ -12,7 +12,7 @@ namespace lemonadeStand
         public int howManyLemons;
         public int howMuchSugar;
         public int howManyIceCubes;
-            //UserInterface UserInterface;
+        public double pricePerCup;
 
         //construstor
         public Recipe()
@@ -21,7 +21,7 @@ namespace lemonadeStand
             howManyLemons = 4;
             howMuchSugar = 4;
             howManyIceCubes = 4;
-
+            pricePerCup = .50;
         }
 
         //member methods(HAS TO)

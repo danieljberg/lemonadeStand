@@ -9,47 +9,60 @@ namespace lemonadeStand
     class Customer
     {
         //member variables(HAS A)
-        public bool toBuy;
-        public int chanceToBuy;
+        public bool willBuy;
+        public bool chanceToBuy;
         public double priceWillingToPay;
 
         //construstor
-        public Customer()
-        {
-            priceWillingToPay = .25;
+        public Customer(Weather weather, Recipe recipe)
+        {            
+            priceWillingToPay = GeneratePriceWillingToPay();
+            AdjustPriceWillingToPay(weather);
+            chanceToBuy = ChanceToBuy(weather);
+            willBuy = WillBuy(recipe);
         }
-
 
         //member methods(HAS TO)
-        public void GeneratePriceWillingToPay()
+        public bool WillBuy(Recipe recipe)
+        {
+            if (recipe.pricePerCup <= priceWillingToPay && chanceToBuy == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public double GeneratePriceWillingToPay()
         {
             Random randomNumber = new Random();
-            double adjustPriceWillingToPay = randomNumber.NextDouble();
-            priceWillingToPay += adjustPriceWillingToPay;
+            double randomPrice = randomNumber.NextDouble() + .25;
+            return randomPrice;
         }
-        public void PriceWillingToPay(Day today)
+        public void AdjustPriceWillingToPay(Weather weather)
         {
-            if (today.Weather.actualDayTemperature >= 90)
+            if (weather.actualDayTemperature >= 90)
             {
                 priceWillingToPay += .75;
             }
-            else if (today.Weather.actualDayTemperature >= 80 && today.Weather.actualDayTemperature < 90)
+            else if (weather.actualDayTemperature >= 80 && weather.actualDayTemperature < 90)
             {
                 priceWillingToPay += .25;
             }
-            else if (today.Weather.actualDayTemperature >= 60 && today.Weather.actualDayTemperature < 70)
+            else if (weather.actualDayTemperature >= 60 && weather.actualDayTemperature < 70)
             {
                 priceWillingToPay -= .25;
             }
         }
-        public bool ChanceToBuy(Day today)
+        public bool ChanceToBuy(Weather weather)
         {
             Random randomNumber = new Random();
-            chanceToBuy = randomNumber.Next(101);
-            switch (today.Weather.actualDayForecast)
+            int chanceToBuyNumber = randomNumber.Next(101);
+            switch (weather.actualDayForecast)
             {
                 case "Sunny":
-                    if (chanceToBuy >= 10)
+                    if (chanceToBuyNumber >= 10)
                     {
                         return true;
                     }
@@ -58,7 +71,7 @@ namespace lemonadeStand
                         return false;
                     }                    
                 case "Partly Sunny":
-                    if (chanceToBuy >= 20)
+                    if (chanceToBuyNumber >= 20)
                     {
                         return true;
                     }
@@ -67,7 +80,7 @@ namespace lemonadeStand
                         return false;
                     }
                 case "Partly Cloudy":
-                    if (chanceToBuy >= 30)
+                    if (chanceToBuyNumber >= 30)
                     {
                         return true;
                     }
@@ -76,7 +89,7 @@ namespace lemonadeStand
                         return false;
                     }
                 case "Overcast":
-                    if (chanceToBuy >= 40)
+                    if (chanceToBuyNumber >= 40)
                     {
                         return true;
                     }
@@ -85,7 +98,7 @@ namespace lemonadeStand
                         return false;
                     }
                 case "Rainy":
-                    if (chanceToBuy >= 50)
+                    if (chanceToBuyNumber >= 50)
                     {
                         return true;
                     }
