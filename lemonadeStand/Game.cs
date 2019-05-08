@@ -9,9 +9,9 @@ namespace lemonadeStand
     public class Game
     {
         //member variables(HAS A)
-        public Store store;
-        public List<Day> daysOfWeek;
         public Player Player;
+        public Store store;
+        public List<Day> daysOfWeek;        
         public int daysPlaying;
 
         //construstor
@@ -25,7 +25,12 @@ namespace lemonadeStand
         //member methods(HAS TO)
         public void PlayGame()
         {
-            
+            UserInterface.GetName();
+            UserInterface.WelcomeScreen(Player);
+            UserInterface.GamePlay();
+            Player.SetRecipe();
+
+
             //daysOfWeek[0].Weather.projectedDayForecast
 
         }

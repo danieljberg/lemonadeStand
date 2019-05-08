@@ -34,25 +34,25 @@ namespace lemonadeStand
                 case "cups":
                 case "cup":
                     totalPrice = CalculateTotalPrice(cupPrice, howMany);
-                    player.inventory.numberOfCups += howMany;
-                    player.wallet.totalValue -= totalPrice;
+                    player.Inventory.numberOfCups += howMany;
+                    player.Wallet.totalValue -= totalPrice;
                     break;
                 case "lemons":
                 case "lemon":
                     totalPrice = CalculateTotalPrice(lemonPrice, howMany);
-                    player.inventory.numberOfLemons += howMany;
-                    player.wallet.totalValue -= totalPrice;
+                    player.Inventory.numberOfLemons += howMany;
+                    player.Wallet.totalValue -= totalPrice;
                     break;
                 case "sugar":
                 case "sugars":
                     totalPrice = CalculateTotalPrice(sugarPrice, howMany);
-                    player.inventory.cupsOfSugar += howMany;
-                    player.wallet.totalValue -= totalPrice;
+                    player.Inventory.cupsOfSugar += howMany;
+                    player.Wallet.totalValue -= totalPrice;
                     break;
                 case "ice":
                     totalPrice = CalculateTotalPrice(icePrice, howMany);
-                    player.inventory.numberOfIceCubes += howMany;
-                    player.wallet.totalValue -= totalPrice;
+                    player.Inventory.numberOfIceCubes += howMany;
+                    player.Wallet.totalValue -= totalPrice;
                     break;
                 default:
                     itemToBuy = UserInterface.ItemToBuy();

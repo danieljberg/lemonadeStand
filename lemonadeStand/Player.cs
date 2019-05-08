@@ -11,14 +11,16 @@ namespace lemonadeStand
         //member variables(HAS A)
         public string name;
         public double profitLoss;
-        public Inventory inventory;
-        public Wallet wallet;
+        public Inventory Inventory;
+        public Wallet Wallet;
+        public Recipe Recipe;
 
         //construstor
         public Player()
         {
-            inventory = new Inventory();
-            wallet = new Wallet();
+            Inventory = new Inventory();
+            Wallet = new Wallet();
+            Recipe = new Recipe();
         }
 
         //member methods(HAS TO)
@@ -26,8 +28,41 @@ namespace lemonadeStand
         {
 
         }
-        public void SetNewRecipe()
+        public void SetRecipe()
         {
+            UserInterface.DisplayRecipe(Recipe);
+            string answer = UserInterface.AskNewRecipe();
+            if (answer == "yes")
+            {
+                int howMany;
+                double howMuch;
+                string item = UserInterface.ItemToReset();
+                switch (item)
+                {
+                    case "lemons":
+                    case "lemon":
+                    case "Lemons":
+                    case "Lemon":
+                        howMany = UserInterface.HowMany("Lemons");
+                        Recipe.howManyLemons = howMany;
+                        break;
+                    case "Sugar":
+                    case "sugar":
+                        howMany = UserInterface.HowMany("Cups of Sugar");
+                        Recipe.howMuchSugar = howMany;
+                        break;
+                    case "Ice":
+                    case "ice":
+                        howMany = UserInterface.HowMany("Cubes of Ice");
+                        Recipe.howManyIceCubes = howMany;
+                        break;
+                    case "Price":
+                    case "price":
+                        howMuch = UserInterface.ResetPrice();
+                        Recipe.pricePerCup = howMuch;
+                        break;
+                }
+            }
 
         }
     }

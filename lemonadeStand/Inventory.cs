@@ -25,14 +25,14 @@ namespace lemonadeStand
         }
 
         //member methods(HAS TO)
-        public int SubtractInventoryItem(int item)
-        {
-            return item--;
+                //public int SubtractInventoryItem(int item)
+                //{
+                //    return item--;
 
-        }
-        public int AddToInventoryItem(int item)
-        {
-            return item++;
-        }
+                //}
+                //public int AddToInventoryItem(int item)
+                //{
+                //    return item++;
+                //}
     }
 }

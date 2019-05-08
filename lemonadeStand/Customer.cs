@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lemonadeStand
 {
-    class Customer
+    public class Customer
     {
         //member variables(HAS A)
         public bool willBuy;
