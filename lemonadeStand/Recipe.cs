@@ -9,9 +9,9 @@ namespace lemonadeStand
     public class Recipe
     {
         //member variables(HAS A)
-        int howManyLemons;
-        int howMuchSugar;
-        int howManyIceCubes;
+        public int howManyLemons;
+        public int howMuchSugar;
+        public int howManyIceCubes;
             //UserInterface UserInterface;
 
         //construstor

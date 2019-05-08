@@ -18,7 +18,6 @@ namespace lemonadeStand
         public Day()
         {
             Weather = new Weather();
-            daysPlaying = 7;
         }
         
 

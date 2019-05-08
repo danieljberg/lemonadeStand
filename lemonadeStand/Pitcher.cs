@@ -10,10 +10,14 @@ namespace lemonadeStand
     {
         //member variables(HAS A)
         public double costPerPitcher;
-
+        public int cupsInPitcher;
 
         //construstor
-
+        public Pitcher()
+        {
+            costPerPitcher = 
+            cupsInPitcher = 10;
+        }
 
         //member methods(HAD A)
     }

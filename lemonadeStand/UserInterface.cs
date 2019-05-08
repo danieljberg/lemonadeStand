@@ -41,11 +41,11 @@ namespace lemonadeStand
         {
             Console.WriteLine($"INVENTORY:\n\nCups: {player.inventory.numberOfCups}\nLemons: {player.inventory.numberOfLemons}\nSugar(cups): {player.inventory.cupsOfSugar}\nIce cubes: {player.inventory.numberOfIceCubes}");
         }
-        public static void DisplayRecipe(int howManyLemons, int howMuchSugar, int howManyIceCubes)
+        public static void DisplayRecipe(Recipe recipe)
         {
-            Console.WriteLine($"RECIPE:\n\nLemons: {howManyLemons}\nSugar: {howMuchSugar}\nIce: {howManyIceCubes}");
+            Console.WriteLine($"RECIPE:\n\nLemons: {recipe.howManyLemons}\nSugar: {recipe.howMuchSugar}\nIce: {recipe.howManyIceCubes}");
         }
-        public static void DisplayActualWeather(int todayTempature, string todayForcast)
+        public static void DisplayActualWeather()
         {
             Console.WriteLine($"Today's Tempature: {todayTempature}°F\nToday's Forcast: {todayForcast}");
         }
