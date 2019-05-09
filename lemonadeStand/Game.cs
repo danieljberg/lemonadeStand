@@ -38,41 +38,60 @@ namespace lemonadeStand
             UserInterface.GamePlay();
             UserInterface.EnterToContinue();
             Console.Clear();
-            UserInterface.DisplayInventoryInfo();
-            UserInterface.EnterToContinue();
-            Console.Clear();
-            UserInterface.DisplayProjectedWeather(daysOfWeek);
-            UserInterface.DisplayStorePrice(Store);
-            UserInterface.DisplayWallet(Player);
-            UserInterface.DisplayInventory(Player);
-
-            string answer = UserInterface.AskToBuyInventory();            
-            while (answer == "yes")
+            for (int i = 0; i < daysPlaying; i++)
             {
-                Store.SellItem(Player);
                 Console.Clear();
                 UserInterface.DisplayProjectedWeather(daysOfWeek);
-                UserInterface.DisplayStorePrice(Store);
-                UserInterface.DisplayWallet(Player);
-                UserInterface.DisplayInventory(Player);
-                answer = UserInterface.AskToBuyInventory();
-            }
-            UserInterface.EnterToContinue();
-            Console.Clear();
-            UserInterface.DisplayProjectedWeather(daysOfWeek);
-            UserInterface.DisplayRecipe(Player.Recipe);
-            answer = UserInterface.AskNewRecipe();
-            while (answer == "yes")
-            {
-                Player.SetRecipe();
-                Console.Clear();
-                UserInterface.DisplayProjectedWeather(daysOfWeek);
-                UserInterface.DisplayRecipe(Player.Recipe);
+                Console.WriteLine($"\n~~~~~~~~~~~~~~~~~~~~~~~~~  DAY {i+1}  ~~~~~~~~~~~~~~~~~~~~~~~~~");
+                UserInterface.DisplayActualWeather(daysOfWeek[i].Weather);
+                string answer = UserInterface.AskToBuyInventory();
+                while (answer != "yes" && answer != "no")
+                {
+                    answer = UserInterface.AskToBuyInventory();
+                }
+                while (answer == "yes")
+                {                    
+                    Console.Clear();
+                    UserInterface.DisplayProjectedWeather(daysOfWeek);
+                    Console.WriteLine($"\n~~~~~~~~~~~~~~~~~~~~~~~~~  DAY {i + 1}  ~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    UserInterface.DisplayActualWeather(daysOfWeek[i].Weather);
+                    UserInterface.DisplayStorePrice(Store);
+                    UserInterface.DisplayWallet(Player);
+                    UserInterface.DisplayInventory(Player);
+                    Store.SellItem(Player);
+                    Console.Clear();
+                    UserInterface.DisplayProjectedWeather(daysOfWeek);
+                    Console.WriteLine($"\n~~~~~~~~~~~~~~~~~~~~~~~~~  DAY {i + 1}  ~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    UserInterface.DisplayActualWeather(daysOfWeek[i].Weather);
+                    UserInterface.DisplayStorePrice(Store);
+                    UserInterface.DisplayWallet(Player);
+                    UserInterface.DisplayInventory(Player);
+                    answer = UserInterface.AskToBuyInventory();
+                }
                 answer = UserInterface.AskNewRecipe();
-                
+                while (answer != "yes" && answer != "no")
+                {
+                    answer = UserInterface.AskNewRecipe();
+                }
+                while (answer == "yes")
+                {                    
+                    Console.Clear();
+                    UserInterface.DisplayProjectedWeather(daysOfWeek);
+                    Console.WriteLine($"\n~~~~~~~~~~~~~~~~~~~~~~~~~  DAY {i + 1}  ~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    UserInterface.DisplayActualWeather(daysOfWeek[i].Weather);
+                    UserInterface.DisplayInventory(Player);
+                    UserInterface.DisplayRecipe(Player.Recipe);
+                    Player.SetRecipe();
+                    Console.Clear();
+                    UserInterface.DisplayProjectedWeather(daysOfWeek);
+                    Console.WriteLine($"\n~~~~~~~~~~~~~~~~~~~~~~~~~  DAY {i + 1}  ~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    UserInterface.DisplayActualWeather(daysOfWeek[i].Weather);
+                    UserInterface.DisplayInventory(Player);
+                    UserInterface.DisplayRecipe(Player.Recipe);
+                    answer = UserInterface.AskNewRecipe();
+                }
+                UserInterface.EnterToContinue();
             }
-            
-
         }
     }
 }

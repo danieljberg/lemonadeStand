@@ -28,7 +28,7 @@ namespace lemonadeStand
         }
         public static void GamePlay()
         {
-            Console.WriteLine("Game Play:\n1. Buy inventory (Lemons, Sugar, Ice)\n    HINT: make sure you buy enough suplies to get through the day\n2. Set your recipe for a pitcher of lemonade (A pitcher is about 10 cups)\n3. Set your price per cup\n    HINT: Rmember to check the weather\n\n");
+            Console.WriteLine("Game Play:\n1. Buy inventory (Lemons, Sugar, Ice)\n2. Set your recipe \n3. Set your price per cup\n    HINT: Rmember to check the weather\n\n");
         }
         public static void EnterToContinue()
         {
@@ -55,7 +55,7 @@ namespace lemonadeStand
         }
         public static string ItemToBuy()
         {
-            Console.WriteLine("What item would you like to buy?");
+            Console.WriteLine("\nWhat item would you like to buy?");
             string itemToBuy = Console.ReadLine();
             return itemToBuy;
         }
@@ -76,26 +76,26 @@ namespace lemonadeStand
             Console.WriteLine("Enter new price:");
             double newPrice = double.Parse(Console.ReadLine());
             return newPrice;
-        }
+        }        
         public static void DisplayInventoryInfo()
         {
             Console.WriteLine("Now it's time to buy your inventory...\nTake in to account you will be making pitchers of lemonade to sell to all of your customers. Each pitcher will make about 10 cups of lemonade. You will encounter anywhere from 60 to 120 customers on any given day based on the current days temperature. Each customer will decide to buy a cup of lemonade based on the weather and price you set.");
         }
         public static void DisplayWallet(Player player)
         {
-            Console.WriteLine($"WALLET: {player.Wallet.totalValue}\n");
+            Console.WriteLine($"WALLET: ${player.Wallet.totalValue}\n");
         }
         public static void DisplayInventory(Player player)
         {
-            Console.WriteLine($"INVENTORY:\nCups: {player.Inventory.numberOfCups}\nLemons: {player.Inventory.numberOfLemons}\nSugar(in cups): {player.Inventory.cupsOfSugar}\nIce cubes: {player.Inventory.numberOfIceCubes}\n");
+            Console.WriteLine($"INVENTORY:\nCups: {player.Inventory.numberOfCups}\nLemons: {player.Inventory.numberOfLemons}\nSugar(in cups): {player.Inventory.cupsOfSugar}\nIce cubes: {player.Inventory.numberOfIceCubes}");
         }
         public static void DisplayStorePrice(Store store)
         {
-            Console.WriteLine($"\n\nPRICE PER ITEM:\nCups: ${store.cupPrice}\nLemons: ${store.lemonPrice}\nSugar: {store.sugarPrice}\nIce: ${store.icePrice}\n");
+            Console.WriteLine($"\nPRICE PER ITEM:\nCups: ${store.cupPrice}\nLemons: ${store.lemonPrice}\nSugar: {store.sugarPrice}\nIce: ${store.icePrice}\n");
         }
         public static void DisplayRecipe(Recipe recipe)
         {
-            Console.WriteLine($"\n\nRECIPE:\nLemons: {recipe.howManyLemons}\nSugar: {recipe.howMuchSugar}\nIce: {recipe.howManyIceCubes}\nPrice: ${recipe.pricePerCup}\n");
+            Console.WriteLine($"\nRECIPE:\nLemons: {recipe.howManyLemons}\nSugar: {recipe.howMuchSugar}\nIce: {recipe.howManyIceCubes}\nPrice: ${recipe.pricePerCup}\n");
         }
         public static void DisplayProjectedWeather(List<Day> daysOfWeek)
         {
@@ -112,7 +112,7 @@ namespace lemonadeStand
         }
         public static void DisplayActualWeather(Weather weather)
         {
-            Console.WriteLine($"Today's Tempature: {weather.actualDayTemperature}°F\nToday's Forcast: {weather.actualDayForecast}");
+            Console.WriteLine($"Today's Actual Tempature: {weather.actualDayTemperature}°F\nToday's Actual Forcast: {weather.projectedDayForecast}");
         }
     }
 }

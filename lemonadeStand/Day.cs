@@ -8,10 +8,12 @@ namespace lemonadeStand
 {
     public class Day
     {
-        //member variables(HAS A)                
+        //member variables(HAS A)
+        public int numberWillingToBuy;
         public Weather Weather;
         public List<Customer> dayCustomerList;
         Random randomNumber;
+
         //construstor
         public Day(Player player, Random random)
         {
@@ -23,6 +25,10 @@ namespace lemonadeStand
         
 
         //member methods(HAS TO)
+        public void howManyWillBuy()
+        {
+
+        }
         public void GenerateCustomerBase(Weather weather, Player player, Random random)
         {
             if (weather.actualDayTemperature >= 90)

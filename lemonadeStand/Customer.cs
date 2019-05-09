@@ -59,9 +59,9 @@ namespace lemonadeStand
         public bool ChanceToBuy(Weather weather)
         {
             int chanceToBuyNumber = randomNumber.Next(101);
-            switch (weather.actualDayForecast)
+            switch (weather.projectedDayForecast)
             {
-                case "Sunny":
+                case "Sunny   ":
                     if (chanceToBuyNumber >= 10)
                     {
                         return true;
@@ -97,7 +97,7 @@ namespace lemonadeStand
                     {
                         return false;
                     }
-                case "Rainy":
+                case "Rainy   ":
                     if (chanceToBuyNumber >= 50)
                     {
                         return true;
@@ -107,7 +107,7 @@ namespace lemonadeStand
                         return false;
                     }
                 default:
-                    return false;
+                    return true;
             }            
         }
     }

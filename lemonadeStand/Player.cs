@@ -14,6 +14,7 @@ namespace lemonadeStand
         public Inventory Inventory;
         public Wallet Wallet;
         public Recipe Recipe;
+        public Pitcher Pitcher;
 
         //construstor
         public Player()
@@ -21,13 +22,10 @@ namespace lemonadeStand
             Inventory = new Inventory();
             Wallet = new Wallet();
             Recipe = new Recipe();
+            Pitcher = new Pitcher();
         }
 
         //member methods(HAS TO)
-        public void BuyInventory()
-        {
-
-        }
         public void SetRecipe()
         {
             int howMany;
@@ -60,6 +58,10 @@ namespace lemonadeStand
                 default:
                     break;
             }
+        }
+        public void makePitcher()
+        {
+
         }
     }
 }
