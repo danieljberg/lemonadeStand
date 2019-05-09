@@ -19,19 +19,26 @@ namespace lemonadeStand
         {
             Player = new Player();
             daysPlaying = 7;
-            daysOfWeek = new List<Day>(daysPlaying);
+            daysOfWeek = new List<Day>();
+            Random random = new Random();
+            for (int i = 0; i < daysPlaying; i++)
+            {
+                daysOfWeek.Add(new Day(random));
+            }
+            
         }
 
         //member methods(HAS TO)
         public void PlayGame()
         {
-            UserInterface.GetName();
+            Player.name = UserInterface.GetName();
             UserInterface.WelcomeScreen(Player);
             UserInterface.GamePlay();
+            UserInterface.DisplayProjectedWeather(daysOfWeek);
             Player.SetRecipe();
 
 
-            //daysOfWeek[0].Weather.projectedDayForecast
+            
 
         }
 

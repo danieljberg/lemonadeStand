@@ -8,51 +8,46 @@ namespace lemonadeStand
 {
     public class Day
     {
-        //member variables(HAS A)
-        public int daysPlaying;        
+        //member variables(HAS A)                
         public Weather Weather;
-        public Recipe Recipe;
         public List<Customer> dayCustomerList;
-
+        Random randomNumber;
         //construstor
-        public Day()
+        public Day(Random random)
         {
-            Weather = new Weather();
-            Recipe = new Recipe();
+            Weather = new Weather(random);
             dayCustomerList = new List<Customer>();
+            randomNumber = random;
         }
         
 
         //member methods(HAS TO)
-        public void GenerateCustomerBase(Weather weather)
+        public void GenerateCustomerBase(Weather weather, Player player, Random random)
         {
             if (weather.actualDayTemperature >= 90)
             {
-                Random randomNumber = new Random();
                 int randomNumberOfCustomers = randomNumber.Next(80, 120);
                 for (int i = 0; i < randomNumberOfCustomers; i++)
                 {
-                    Customer customer = new Customer(Weather, Recipe);
+                    Customer customer = new Customer(Weather, player.Recipe, random);
                     dayCustomerList.Add(customer);
                 }
             }
             if (weather.actualDayTemperature >= 70 && weather.actualDayTemperature < 90)
             {
-                Random randomNumber = new Random();
                 int randomNumberOfCustomers = randomNumber.Next(70, 100);
                 for (int i = 0; i < randomNumberOfCustomers; i++)
                 {
-                    Customer customer = new Customer(Weather, Recipe);
+                    Customer customer = new Customer(Weather, player.Recipe, random);
                     dayCustomerList.Add(customer);
                 }
             }
             if (weather.actualDayTemperature < 70)
             {
-                Random randomNumber = new Random();
                 int randomNumberOfCustomers = randomNumber.Next(60, 80);
                 for (int i = 0; i < randomNumberOfCustomers; i++)
                 {
-                    Customer customer = new Customer(Weather, Recipe);
+                    Customer customer = new Customer(Weather, player.Recipe, random);
                     dayCustomerList.Add(customer);
                 }
             }

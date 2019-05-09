@@ -14,11 +14,12 @@ namespace lemonadeStand
         public List<string> weatherForecastList;
         public int actualDayTemperature;
         public string actualDayForecast;
-
+        Random randomNumber;
         //construstor
-        public Weather()
+        public Weather(Random random)
         {
-            weatherForecastList = new List<string>() { "Sunny", "Partly Sunny", "Partly Cloudy", "Overcast", "Rainy" };
+            randomNumber = random;
+            weatherForecastList = new List<string>() { "Sunny   ", "Partly Sunny", "Partly Cloudy", "Overcast", "Rainy   " };
             projectedDayTemperature = GetTempature();
             projectedDayForecast = GetForecast(weatherForecastList);
             actualDayTemperature = ActualDayTemperature(projectedDayTemperature);
@@ -27,25 +28,20 @@ namespace lemonadeStand
         //member methods(HAS TO)
         public int GetTempature()
         {
-            Random randomTemp = new Random();
-            projectedDayTemperature = randomTemp.Next(60, 103);
+            
+            projectedDayTemperature = randomNumber.Next(60, 103);
             return projectedDayTemperature;
         }
         public string GetForecast(List<string> weatherForecast)
         {
-            Random randomNumber = new Random();
+          
             int indexNumber = randomNumber.Next(5);
             projectedDayForecast = weatherForecast.ElementAt(indexNumber);
             return projectedDayForecast;
         }
         public int ActualDayTemperature(int projectedDayTemperature)
         {
-            Random randomNumber = new Random();
             return actualDayTemperature = randomNumber.Next(projectedDayTemperature - 3, projectedDayTemperature + 3);
-        }
-        public void ActualDayForecast()
-        {
-
         }
     }
 }

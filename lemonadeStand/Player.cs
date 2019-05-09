@@ -43,17 +43,17 @@ namespace lemonadeStand
                     case "lemon":
                     case "Lemons":
                     case "Lemon":
-                        howMany = UserInterface.HowMany("Lemons");
+                        howMany = UserInterface.SetHowMany("Lemons");
                         Recipe.howManyLemons = howMany;
                         break;
                     case "Sugar":
                     case "sugar":
-                        howMany = UserInterface.HowMany("Cups of Sugar");
+                        howMany = UserInterface.SetHowMany("Cups of Sugar");
                         Recipe.howMuchSugar = howMany;
                         break;
                     case "Ice":
                     case "ice":
-                        howMany = UserInterface.HowMany("Cubes of Ice");
+                        howMany = UserInterface.SetHowMany("Cubes of Ice");
                         Recipe.howManyIceCubes = howMany;
                         break;
                     case "Price":

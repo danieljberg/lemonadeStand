@@ -12,10 +12,12 @@ namespace lemonadeStand
         public bool willBuy;
         public bool chanceToBuy;
         public double priceWillingToPay;
+        Random randomNumber;
 
         //construstor
-        public Customer(Weather weather, Recipe recipe)
-        {            
+        public Customer(Weather weather, Recipe recipe, Random random)
+        {
+            randomNumber = random;
             priceWillingToPay = GeneratePriceWillingToPay();
             AdjustPriceWillingToPay(weather);
             chanceToBuy = ChanceToBuy(weather);
@@ -36,7 +38,6 @@ namespace lemonadeStand
         }
         public double GeneratePriceWillingToPay()
         {
-            Random randomNumber = new Random();
             double randomPrice = randomNumber.NextDouble() + .25;
             return randomPrice;
         }
@@ -57,7 +58,6 @@ namespace lemonadeStand
         }
         public bool ChanceToBuy(Weather weather)
         {
-            Random randomNumber = new Random();
             int chanceToBuyNumber = randomNumber.Next(101);
             switch (weather.actualDayForecast)
             {
