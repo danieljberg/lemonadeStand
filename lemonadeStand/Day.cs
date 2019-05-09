@@ -13,11 +13,12 @@ namespace lemonadeStand
         public List<Customer> dayCustomerList;
         Random randomNumber;
         //construstor
-        public Day(Random random)
+        public Day(Player player, Random random)
         {
             Weather = new Weather(random);
-            dayCustomerList = new List<Customer>();
+            dayCustomerList = new List<Customer>();            
             randomNumber = random;
+            GenerateCustomerBase(Weather, player, random);
         }
         
 

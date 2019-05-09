@@ -30,40 +30,36 @@ namespace lemonadeStand
         }
         public void SetRecipe()
         {
-            UserInterface.DisplayRecipe(Recipe);
-            string answer = UserInterface.AskNewRecipe();
-            if (answer == "yes")
+            int howMany;
+            double howMuch;
+            string item = UserInterface.ItemToReset();
+            switch (item)
             {
-                int howMany;
-                double howMuch;
-                string item = UserInterface.ItemToReset();
-                switch (item)
-                {
-                    case "lemons":
-                    case "lemon":
-                    case "Lemons":
-                    case "Lemon":
-                        howMany = UserInterface.SetHowMany("Lemons");
-                        Recipe.howManyLemons = howMany;
-                        break;
-                    case "Sugar":
-                    case "sugar":
-                        howMany = UserInterface.SetHowMany("Cups of Sugar");
-                        Recipe.howMuchSugar = howMany;
-                        break;
-                    case "Ice":
-                    case "ice":
-                        howMany = UserInterface.SetHowMany("Cubes of Ice");
-                        Recipe.howManyIceCubes = howMany;
-                        break;
-                    case "Price":
-                    case "price":
-                        howMuch = UserInterface.ResetPrice();
-                        Recipe.pricePerCup = howMuch;
-                        break;
-                }
+                case "lemons":
+                case "lemon":
+                case "Lemons":
+                case "Lemon":
+                    howMany = UserInterface.SetHowMany("Lemons");
+                    Recipe.howManyLemons = howMany;
+                    break;
+                case "Sugar":
+                case "sugar":
+                    howMany = UserInterface.SetHowMany("Cups of Sugar");
+                    Recipe.howMuchSugar = howMany;
+                    break;
+                case "Ice":
+                case "ice":
+                    howMany = UserInterface.SetHowMany("Cubes of Ice");
+                    Recipe.howManyIceCubes = howMany;
+                    break;
+                case "Price":
+                case "price":
+                    howMuch = UserInterface.ResetPrice();
+                    Recipe.pricePerCup = howMuch;
+                    break;
+                default:
+                    break;
             }
-
         }
     }
 }

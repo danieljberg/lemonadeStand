@@ -28,8 +28,13 @@ namespace lemonadeStand
         }
         public static void GamePlay()
         {
-            Console.WriteLine("Game Play:\n1. Set your recipe for a pitcher of lemonade (A pitcher is about 10 cups)\n2. Set your price per cup\n    HINT: Rmember to check the weather\n3. Buy inventory (Lemons, Sugar, Ice)\n    HINT: make sure you buy enough suplies to get through the day\n\n");
-        }        
+            Console.WriteLine("Game Play:\n1. Buy inventory (Lemons, Sugar, Ice)\n    HINT: make sure you buy enough suplies to get through the day\n2. Set your recipe for a pitcher of lemonade (A pitcher is about 10 cups)\n3. Set your price per cup\n    HINT: Rmember to check the weather\n\n");
+        }
+        public static void EnterToContinue()
+        {
+            Console.WriteLine("Hit enter to play game");
+            Console.ReadLine();
+        }
         public static int HowMany(string itemToCount)
         {
             Console.WriteLine($"How many {itemToCount} do you want?");
@@ -66,13 +71,21 @@ namespace lemonadeStand
             double newPrice = double.Parse(Console.ReadLine());
             return newPrice;
         }
+        public static void DisplayInventoryInfo()
+        {
+            Console.WriteLine("Now it's time to buy your inventory\n");
+        }
         public static void DisplayWallet(Player player)
         {
-            Console.WriteLine($"WALLET: {player.Wallet.totalValue}");
+            Console.WriteLine($"WALLET: {player.Wallet.totalValue}\n");
         }
         public static void DisplayInventory(Player player)
         {
-            Console.WriteLine($"INVENTORY:\n\nCups: {player.Inventory.numberOfCups}\nLemons: {player.Inventory.numberOfLemons}\nSugar(cups): {player.Inventory.cupsOfSugar}\nIce cubes: {player.Inventory.numberOfIceCubes}");
+            Console.WriteLine($"INVENTORY:\nCups: {player.Inventory.numberOfCups}\nLemons: {player.Inventory.numberOfLemons}\nSugar(in cups): {player.Inventory.cupsOfSugar}\nIce cubes: {player.Inventory.numberOfIceCubes}\n");
+        }
+        public static void DisplayStorePrice(Store store)
+        {
+            Console.WriteLine($"PRICE PER ITEM:\nCups: ${store.cupPrice}\nLemons: ${store.lemonPrice}\nSugar: {store.sugarPrice}\nIce: ${store.icePrice}\n");
         }
         public static void DisplayRecipe(Recipe recipe)
         {

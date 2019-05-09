@@ -10,20 +10,22 @@ namespace lemonadeStand
     {
         //member variables(HAS A)
         public Player Player;
-        public Store store;
+        public Store Store;
         public List<Day> daysOfWeek;        
         public int daysPlaying;
 
         //construstor
         public Game()
         {
+            Random random = new Random();
             Player = new Player();
+            Store = new Store();
             daysPlaying = 7;
             daysOfWeek = new List<Day>();
-            Random random = new Random();
+            
             for (int i = 0; i < daysPlaying; i++)
             {
-                daysOfWeek.Add(new Day(random));
+                daysOfWeek.Add(new Day(Player, random));
             }
             
         }
@@ -34,13 +36,27 @@ namespace lemonadeStand
             Player.name = UserInterface.GetName();
             UserInterface.WelcomeScreen(Player);
             UserInterface.GamePlay();
+            UserInterface.EnterToContinue();
+            Console.Clear();
+            UserInterface.DisplayInventoryInfo();
+            UserInterface.DisplayStorePrice(Store);
+            UserInterface.DisplayWallet(Player);
+            UserInterface.DisplayInventory(Player);
+
             UserInterface.DisplayProjectedWeather(daysOfWeek);
-            Player.SetRecipe();
-
-
+            UserInterface.DisplayRecipe(Player.Recipe);
+            string answer = UserInterface.AskNewRecipe();
+            while (answer == "yes")
+            {
+                Player.SetRecipe();
+                Console.Clear();
+                UserInterface.DisplayProjectedWeather(daysOfWeek);
+                UserInterface.DisplayRecipe(Player.Recipe);
+                answer = UserInterface.AskNewRecipe();
+                
+            }
             
 
         }
-
     }
 }
