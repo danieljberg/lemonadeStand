@@ -39,13 +39,29 @@ namespace lemonadeStand
             UserInterface.EnterToContinue();
             Console.Clear();
             UserInterface.DisplayInventoryInfo();
+            UserInterface.EnterToContinue();
+            Console.Clear();
+            UserInterface.DisplayProjectedWeather(daysOfWeek);
             UserInterface.DisplayStorePrice(Store);
             UserInterface.DisplayWallet(Player);
             UserInterface.DisplayInventory(Player);
 
+            string answer = UserInterface.AskToBuyInventory();            
+            while (answer == "yes")
+            {
+                Store.SellItem(Player);
+                Console.Clear();
+                UserInterface.DisplayProjectedWeather(daysOfWeek);
+                UserInterface.DisplayStorePrice(Store);
+                UserInterface.DisplayWallet(Player);
+                UserInterface.DisplayInventory(Player);
+                answer = UserInterface.AskToBuyInventory();
+            }
+            UserInterface.EnterToContinue();
+            Console.Clear();
             UserInterface.DisplayProjectedWeather(daysOfWeek);
             UserInterface.DisplayRecipe(Player.Recipe);
-            string answer = UserInterface.AskNewRecipe();
+            answer = UserInterface.AskNewRecipe();
             while (answer == "yes")
             {
                 Player.SetRecipe();

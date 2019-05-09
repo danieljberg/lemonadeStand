@@ -32,7 +32,7 @@ namespace lemonadeStand
         }
         public static void EnterToContinue()
         {
-            Console.WriteLine("Hit enter to play game");
+            Console.WriteLine("Hit enter to continue");
             Console.ReadLine();
         }
         public static int HowMany(string itemToCount)
@@ -45,6 +45,12 @@ namespace lemonadeStand
         {
             Console.WriteLine($"Set {itemToCount} to?");
             int answer = int.Parse(Console.ReadLine());
+            return answer;
+        }
+        public static string AskToBuyInventory()
+        {
+            Console.WriteLine("Would you like to buy some inventory? ('yes' or 'no')");
+            string answer = Console.ReadLine();
             return answer;
         }
         public static string ItemToBuy()
@@ -73,7 +79,7 @@ namespace lemonadeStand
         }
         public static void DisplayInventoryInfo()
         {
-            Console.WriteLine("Now it's time to buy your inventory\n");
+            Console.WriteLine("Now it's time to buy your inventory...\nTake in to account you will be making pitchers of lemonade to sell to all of your customers. Each pitcher will make about 10 cups of lemonade. You will encounter anywhere from 60 to 120 customers on any given day based on the current days temperature. Each customer will decide to buy a cup of lemonade based on the weather and price you set.");
         }
         public static void DisplayWallet(Player player)
         {
@@ -85,7 +91,7 @@ namespace lemonadeStand
         }
         public static void DisplayStorePrice(Store store)
         {
-            Console.WriteLine($"PRICE PER ITEM:\nCups: ${store.cupPrice}\nLemons: ${store.lemonPrice}\nSugar: {store.sugarPrice}\nIce: ${store.icePrice}\n");
+            Console.WriteLine($"\n\nPRICE PER ITEM:\nCups: ${store.cupPrice}\nLemons: ${store.lemonPrice}\nSugar: {store.sugarPrice}\nIce: ${store.icePrice}\n");
         }
         public static void DisplayRecipe(Recipe recipe)
         {
