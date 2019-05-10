@@ -20,13 +20,22 @@ namespace lemonadeStand
             Weather = new Weather(random);
             dayCustomerList = new List<Customer>();            
             randomNumber = random;
+            numberWillingToBuy = 0;
             GenerateCustomerBase(Weather, player, random);
+            howManyWillBuy(dayCustomerList);
         }
         
 
         //member methods(HAS TO)
-        public void howManyWillBuy()
+        public void howManyWillBuy(List<Customer> dayCustomerList)
         {
+            for (int i = 0; i < dayCustomerList.Count; i++)
+            {
+                if (dayCustomerList[i].willBuy == true)
+                {
+                    numberWillingToBuy++;
+                }
+            }
 
         }
         public void GenerateCustomerBase(Weather weather, Player player, Random random)

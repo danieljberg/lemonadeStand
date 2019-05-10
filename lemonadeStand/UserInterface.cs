@@ -114,5 +114,9 @@ namespace lemonadeStand
         {
             Console.WriteLine($"Today's Actual Tempature: {weather.actualDayTemperature}°F\nToday's Actual Forcast: {weather.projectedDayForecast}");
         }
+        public static void DisplayEndOfDayReport(Day day)
+        {
+            Console.WriteLine($"Total customers of the day: {day.dayCustomerList.Count}\nTotal customers that bought a cup of lemonade: {day.numberWillingToBuy}");
+        }
     }
 }

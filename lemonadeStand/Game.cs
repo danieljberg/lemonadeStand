@@ -89,7 +89,9 @@ namespace lemonadeStand
                     UserInterface.DisplayInventory(Player);
                     UserInterface.DisplayRecipe(Player.Recipe);
                     answer = UserInterface.AskNewRecipe();
+                    
                 }
+                UserInterface.DisplayEndOfDayReport(daysOfWeek[i]);
                 UserInterface.EnterToContinue();
             }
         }
