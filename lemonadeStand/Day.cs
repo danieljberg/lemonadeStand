@@ -10,6 +10,7 @@ namespace lemonadeStand
     {
         //member variables(HAS A)
         public int numberWillingToBuy;
+        
         public Weather Weather;
         public List<Customer> dayCustomerList;
         Random randomNumber;
@@ -22,11 +23,11 @@ namespace lemonadeStand
             randomNumber = random;
             numberWillingToBuy = 0;
             GenerateCustomerBase(Weather, player, random);
-            howManyWillBuy(dayCustomerList);
+            howManyWillBuy(dayCustomerList);            
         }
         
 
-        //member methods(HAS TO)
+        //member methods(HAS TO)        
         public void howManyWillBuy(List<Customer> dayCustomerList)
         {
             for (int i = 0; i < dayCustomerList.Count; i++)

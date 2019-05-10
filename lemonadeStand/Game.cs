@@ -13,6 +13,8 @@ namespace lemonadeStand
         public Store Store;
         public List<Day> daysOfWeek;        
         public int daysPlaying;
+        public double todaysProfit;
+        public double totalProfit;
 
         //construstor
         public Game()
@@ -31,8 +33,14 @@ namespace lemonadeStand
         }
 
         //member methods(HAS TO)
-        public void PlayGame()
+        public double todayProfit(Day day, Player player)
         {
+            double profit = day.numberWillingToBuy * player.Recipe.pricePerCup;
+            player.Wallet.totalValue += profit;
+            return profit;
+        }
+        public void PlayGame()
+        {            
             Player.name = UserInterface.GetName();
             UserInterface.WelcomeScreen(Player);
             UserInterface.GamePlay();
@@ -91,9 +99,12 @@ namespace lemonadeStand
                     answer = UserInterface.AskNewRecipe();
                     
                 }
-                UserInterface.DisplayEndOfDayReport(daysOfWeek[i]);
+                todaysProfit = todayProfit(daysOfWeek[i], Player);
+                totalProfit += todaysProfit;
+                UserInterface.DisplayEndOfDayReport(todaysProfit, daysOfWeek[i], totalProfit);
                 UserInterface.EnterToContinue();
             }
+            
         }
     }
 }
