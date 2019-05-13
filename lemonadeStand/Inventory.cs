@@ -25,6 +25,18 @@ namespace lemonadeStand
         }
 
         //member methods(HAS TO)
+        public void SubtractRecipeFromInventory(Day day, Player player)
+        {            
+            numberOfLemons -= player.Recipe.howManyLemons;
+            cupsOfSugar -= player.Recipe.howMuchSugar;
+            numberOfIceCubes -= player.Recipe.howManyIceCubes;
+        }
+        public void SubtractFromInventory(Day day, Player player)
+        {
+            numberOfCups -= day.numberWillingToBuy;
+            numberOfIceCubes -= player.Recipe.howManyIceCubes * day.numberWillingToBuy;
+        }
+
                 //public int SubtractInventoryItem(int item)
                 //{
                 //    return item--;

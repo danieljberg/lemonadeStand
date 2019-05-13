@@ -9,8 +9,7 @@ namespace lemonadeStand
     public class Day
     {
         //member variables(HAS A)
-        public int numberWillingToBuy;
-        
+        public int numberWillingToBuy;        
         public Weather Weather;
         public List<Customer> dayCustomerList;
         Random randomNumber;

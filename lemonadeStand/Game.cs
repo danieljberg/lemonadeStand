@@ -99,6 +99,11 @@ namespace lemonadeStand
                     answer = UserInterface.AskNewRecipe();
                     
                 }
+                for (int j = 0; j < daysOfWeek[i].numberWillingToBuy/10; j++)
+                {
+                    Player.Inventory.SubtractRecipeFromInventory(daysOfWeek[i], Player);
+                }
+                Player.Inventory.SubtractFromInventory(daysOfWeek[i], Player);
                 todaysProfit = todayProfit(daysOfWeek[i], Player);
                 totalProfit += todaysProfit;
                 UserInterface.DisplayEndOfDayReport(todaysProfit, daysOfWeek[i], totalProfit);

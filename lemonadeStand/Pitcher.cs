@@ -9,13 +9,11 @@ namespace lemonadeStand
     public class Pitcher
     {
         //member variables(HAS A)
-        public double costPerPitcher;
         public int cupsInPitcher;
 
         //construstor
         public Pitcher()
-        {
-            costPerPitcher = 
+        { 
             cupsInPitcher = 10;
         }
 
